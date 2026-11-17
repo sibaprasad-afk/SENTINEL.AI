@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg-main: #050814;
+  --color-bg-secondary: #090F1E;
+  --color-emerald: #19D6A0;
+  --color-cyan: #32D9E8;
+  --color-purple: #A879FF;
+  --color-blue: #4F9BFF;
+  --color-text-white: #F4F7FF;
+  --color-text-secondary: #A5B0C7;
+  --color-text-muted: #77849E;
+  --color-critical: #FF647C;
+  --color-warning: #F6BE58;
+  --color-success: #35D6A0;
+}
+
+@layer base {
+  html {
+    background-color: #050814;
+    color: #F4F7FF;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(160deg, #050814 0%, #090F1E 52%, #050814 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Glassmorphism Design System Primitives */
+.glass-surface {
+  background: rgba(19, 29, 49, 0.58);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.glass-elevated {
+  background: rgba(28, 39, 62, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.glass-glow-emerald {
+  border-color: rgba(25, 214, 160, 0.32);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.28),
+    0 0 28px -10px rgba(25, 214, 160, 0.32),
+    inset 0 1px 0 rgba(25, 214, 160, 0.16);
+}
+
+.glass-glow-cyan {
+  border-color: rgba(50, 217, 232, 0.30);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.28),
+    0 0 28px -10px rgba(50, 217, 232, 0.28),
+    inset 0 1px 0 rgba(50, 217, 232, 0.15);
+}
+
+.glass-glow-purple {
+  border-color: rgba(168, 121, 255, 0.30);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.28),
+    0 0 28px -10px rgba(168, 121, 255, 0.28),
+    inset 0 1px 0 rgba(168, 121, 255, 0.15);
+}
+
+@keyframes hologramSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes hologramSpinReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes scanSweep {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  15% { opacity: 0.85; }
+  85% { opacity: 0.85; }
+  100% {
+    transform: translateY(420%);
+    opacity: 0;
+  }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes orbDriftA {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(36px, -24px) scale(1.06); }
+}
+
+@keyframes orbDriftB {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-32px, 28px) scale(1.08); }
+}
+
+.animate-hologram-spin {
+  animation: hologramSpin 26s linear infinite;
+}
+
+.animate-hologram-spin-reverse {
+  animation: hologramSpinReverse 38s linear infinite;
+}
+
+.animate-scan-sweep {
+  animation: scanSweep 5.5s ease-in-out infinite;
+}
+
+.animate-subtle-float {
+  animation: subtleFloat 6s ease-in-out infinite;
+}
+
+.animate-orb-a {
+  animation: orbDriftA 18s ease-in-out infinite;
+}
+
+.animate-orb-b {
+  animation: orbDriftB 22s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-hologram-spin,
+  .animate-hologram-spin-reverse,
+  .animate-scan-sweep,
+  .animate-subtle-float,
+  .animate-orb-a,
+  .animate-orb-b {
+    animation: none !important;
+  }
+}
+
+/* Dark Glass Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050814;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(165, 176, 199, 0.22);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(25, 214, 160, 0.45);
+}

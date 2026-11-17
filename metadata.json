@@ -1,0 +1,8 @@
+{
+  "name": "SENTINEL AI",
+  "description": "Clinical Intelligence & Prioritization Platform. AI-powered medical image intelligence, clinical data analysis, and intelligent case prioritization for healthcare professionals.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

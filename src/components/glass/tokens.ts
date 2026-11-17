@@ -1,0 +1,45 @@
+export const GLASS_TOKENS = {
+  colors: {
+    bgMain: '#050814',
+    bgSecondary: '#090F1E',
+    glassSurface: 'rgba(19, 29, 49, 0.58)',
+    glassElevated: 'rgba(28, 39, 62, 0.65)',
+    emerald: '#19D6A0',
+    cyan: '#32D9E8',
+    purple: '#A879FF',
+    blue: '#4F9BFF',
+    white: '#F4F7FF',
+    secondary: '#A5B0C7',
+    muted: '#77849E',
+    critical: '#FF647C',
+    warning: '#F6BE58',
+    success: '#35D6A0',
+  },
+  borders: {
+    subtle: '1px solid rgba(255, 255, 255, 0.10)',
+    elevated: '1px solid rgba(255, 255, 255, 0.14)',
+    emerald: '1px solid rgba(25, 214, 160, 0.32)',
+    cyan: '1px solid rgba(50, 217, 232, 0.30)',
+    purple: '1px solid rgba(168, 121, 255, 0.30)',
+  },
+  radii: {
+    sm: '10px',
+    md: '12px',
+    lg: '16px',
+    xl: '20px',
+  },
+  blur: {
+    glass: '20px',
+    elevated: '24px',
+  },
+  shadows: {
+    glass: '0 8px 32px rgba(0, 0, 0, 0.25)',
+    elevated: '0 16px 44px rgba(0, 0, 0, 0.38)',
+  },
+  motion: {
+    fast: 0.16,
+    base: 0.24,
+    slow: 0.42,
+    ease: [0.16, 1, 0.3, 1] as const,
+  },
+} as const;
